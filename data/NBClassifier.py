@@ -1,0 +1,9 @@
+# import FilterTweets
+from FilterTweets import *
+# Train the classifier
+NBClassifier = nltk.NaiveBayesClassifier.train(training_set)
+
+# Test the classifier
+testTweet = 'Congrats @ravikiranj, i heard you wrote a new tech post on sentiment analysis'
+processedTestTweet = processTweet(testTweet)
+print NBClassifier.classify(extract_features(getFeatureVector(processedTestTweet)))
